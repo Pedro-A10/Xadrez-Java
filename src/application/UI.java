@@ -21,6 +21,6 @@ public class UI {
         }else{
             System.out.print(piece);
         }
-        System.out.println(" ");
+        System.out.print(" ");
     }
 }
