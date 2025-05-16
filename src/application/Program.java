@@ -51,6 +51,20 @@ public class Program {
                     chessMatch.replacePromotedPiece(type);
                 }
 
+                if (chessMatch.isDrawByStalemate()) {
+                    UI.clearScreen();
+                    UI.printMatch(chessMatch, captured);
+                    System.out.println("Empate por afogamento!");
+                    break;
+                }
+
+                if (chessMatch.isFiftyMoveDraw()) {
+                    UI.clearScreen();
+                    UI.printMatch(chessMatch, captured);
+                    System.out.println("Empate declarado por 50 movimentos sem captura ou movimento de peão!");
+                    break;
+                }
+
             }
             catch (ChessException e){
                 System.out.println(e.getMessage());

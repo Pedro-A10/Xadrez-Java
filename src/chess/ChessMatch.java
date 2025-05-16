@@ -18,9 +18,11 @@ public class ChessMatch {
     private boolean checkMate;
     private ChessPiece enPassantVulnerable;
     private ChessPiece promoted;
+    private int fiftyMoveCounter = 0;
 
     private List<Piece> piecesOnTheBoard = new ArrayList<>();
     private List<Piece> capturedPieces = new ArrayList<>();
+    private List<Position> moveHistory = new ArrayList<>();
 
     public ChessMatch() {
         board = new Board(8,8);
@@ -53,6 +55,10 @@ public class ChessMatch {
         return enPassantVulnerable;
     }
 
+    public int getFiftyMoveCounter() {
+        return fiftyMoveCounter;
+    }
+
     public ChessPiece[][] getpieces() {
         ChessPiece[][] mat = new ChessPiece[board.getRows()][board.getColumns()];
         for (int i=0; i<board.getRows(); i++){
@@ -76,14 +82,23 @@ public class ChessMatch {
         validateTargetPosition(source, target);
         Piece capturedPiece = makeMove(source, target);
 
+        ChessPiece movedPiece = (ChessPiece)board.piece(target);
+
+        // Empate por 50 movimentos
+        boolean pawnMove = (movedPiece instanceof Pawn);
+        boolean capture = (capturedPiece != null);
+        if (pawnMove || capture) {
+            fiftyMoveCounter = 0;
+        } else {
+            fiftyMoveCounter++;
+        }
+
         if (testCheck(currentPlayer)) {
             undoMove(source, target, capturedPiece);
             throw new ChessException("Jogada invalida: Jogador se colocando em cheque");
         }
 
-        ChessPiece movedPiece = (ChessPiece)board.piece(target);
-
-        //Promoção
+        // Promoção
         promoted = null;
         if (movedPiece instanceof Pawn) {
             if (movedPiece.getColor() == Color.WHITE && target.getRow() == 0 || (movedPiece.getColor() == Color.BLACK && target.getRow() == 7 )) {
@@ -96,14 +111,14 @@ public class ChessMatch {
 
         if (testCheckMate(opponent(currentPlayer))) {
             checkMate = true;
-        }else {
+        } else {
             nextTurn();
         }
 
-        //Movimento en passant
-        if (movedPiece instanceof Pawn && (target.getRow() == source.getRow() -2 || target.getRow() == source.getRow() +2)){
+        // Movimento en passant
+        if (movedPiece instanceof Pawn && (target.getRow() == source.getRow() - 2 || target.getRow() == source.getRow() + 2)) {
             enPassantVulnerable = movedPiece;
-        }else {
+        } else {
             enPassantVulnerable = null;
         }
 
@@ -302,6 +317,39 @@ public class ChessMatch {
             }
         }
         return true;
+    }
+
+    //Empate por afogamento
+    public boolean isDrawByStalemate() {
+        if (getCheck()) return false;
+        for (int i=0; i<board.getRows(); i++) {
+            for (int j=0; j< board.getColumns(); j++) {
+                ChessPiece p = (ChessPiece) board.piece(i, j);
+                if (p != null && p.getColor() == currentPlayer) {
+                    boolean[][] moves = p.possibleMoves();
+                    for (int x=0; x<board.getRows(); x++) {
+                        for (int y=0; y<board.getColumns(); y++) {
+                            if (moves[x][y]) {
+                                Position source = new Position(i, j);
+                                Position target = new Position(x, y);
+                                Piece captured = makeMove(source, target);
+                                boolean stillInCheck = testCheck(currentPlayer);
+                                undoMove(source, target, captured);
+                                if (!stillInCheck) {
+                                    return false;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
+    // Empate 50 movimentos!
+    public boolean isFiftyMoveDraw() {
+        return fiftyMoveCounter >= 100;
     }
 
     private void placeNewPiece(char column, int row, ChessPiece piece) {
