@@ -355,7 +355,6 @@ public class ChessMatch {
         return fiftyMoveCounter >= 100;
     }
 
-    // Empate 3 repetições
     private String generateBoardStateKey() {
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < board.getRows(); i++) {
@@ -374,10 +373,37 @@ public class ChessMatch {
     positionOccurrences.put(key, positionOccurrences.getOrDefault(key, 0) + 1);
 }
 
+    // Empate 3 repetições
     public boolean isDrawByThreefoldRepetition() {
     String key = generateBoardStateKey();
     return positionOccurrences.getOrDefault(key, 0) >= 3;
 }
+
+    // Empate por falta de peças
+    public boolean isDrawByInsufficientMaterial() {
+    List<Piece> pieces = piecesOnTheBoard.stream()
+        .filter(p -> !(p instanceof King))
+        .collect(Collectors.toList());
+
+    if (pieces.isEmpty()) {
+        return true;
+    }
+    if (pieces.size() == 1) {
+        Piece p = pieces.get(0);
+        return (p instanceof Bishop) || (p instanceof Knight);
+    }
+    if (pieces.size() == 2) {
+        Piece p1 = pieces.get(0);
+        Piece p2 = pieces.get(1);
+        if (p1 instanceof Bishop && p2 instanceof Bishop) {
+            Bishop b1 = (Bishop) p1;
+            Bishop b2 = (Bishop) p2;
+            return isSameBishopColor(b1, b2);
+        }
+    }
+    return false;
+}
+
 
     private void placeNewPiece(char column, int row, ChessPiece piece) {
         board.placePiece(piece, new ChessPosition(column, row).toPosition());
