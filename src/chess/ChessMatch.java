@@ -24,6 +24,8 @@ public class ChessMatch {
     private List<Piece> capturedPieces = new ArrayList<>();
     private List<Position> moveHistory = new ArrayList<>();
 
+    private Map<String, Integer> positionOccurrences = new HashMap<>();
+
     public ChessMatch() {
         board = new Board(8,8);
         turn = 1;
@@ -123,6 +125,7 @@ public class ChessMatch {
         }
 
         return (ChessPiece)capturedPiece;
+        updatePositionOccurrences();
     }
 
     public ChessPiece replacePromotedPiece (String type) {
@@ -351,6 +354,30 @@ public class ChessMatch {
     public boolean isFiftyMoveDraw() {
         return fiftyMoveCounter >= 100;
     }
+
+    // Empate 3 repetições
+    private String generateBoardStateKey() {
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < board.getRows(); i++) {
+        for (int j = 0; j < board.getColumns(); j++) {
+            Piece p = board.piece(i, j);
+            if (p == null) sb.append("-");
+            else sb.append(p.toString()).append(p.getColor());
+        }
+    }
+    sb.append(currentPlayer);
+    return sb.toString();
+}
+
+    private void updatePositionOccurrences() {
+    String key = generateBoardStateKey();
+    positionOccurrences.put(key, positionOccurrences.getOrDefault(key, 0) + 1);
+}
+
+    public boolean isDrawByThreefoldRepetition() {
+    String key = generateBoardStateKey();
+    return positionOccurrences.getOrDefault(key, 0) >= 3;
+}
 
     private void placeNewPiece(char column, int row, ChessPiece piece) {
         board.placePiece(piece, new ChessPosition(column, row).toPosition());
