@@ -65,6 +65,18 @@ public class Program {
                     break;
                 }
 
+                if (chessMatch.isDrawByThreefoldRepetition()) {
+                    UI.clearScreen();
+                    UI.printMatch(chessMatch, captured);
+                    System.out.println("Empate por 3 repetições de posição!");
+                    break;
+                }
+                if (chessMatch.isDrawByInsufficientMaterial()) {
+                    UI.clearScreen();
+                    UI.printMatch(chessMatch, captured);
+                    System.out.println("Empate por material insuficiente!");
+                    break;
+                }
             }
             catch (ChessException e){
                 System.out.println(e.getMessage());
