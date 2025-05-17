@@ -124,8 +124,8 @@ public class ChessMatch {
             enPassantVulnerable = null;
         }
 
-        return (ChessPiece)capturedPiece;
         updatePositionOccurrences();
+        return (ChessPiece)capturedPiece;
     }
 
     public ChessPiece replacePromotedPiece (String type) {
