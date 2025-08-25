@@ -6,7 +6,9 @@ import boardgame.Position;
 import chess.pieces.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ChessMatch {
@@ -356,17 +358,17 @@ public class ChessMatch {
     }
 
     private String generateBoardStateKey() {
-    StringBuilder sb = new StringBuilder();
-    for (int i = 0; i < board.getRows(); i++) {
-        for (int j = 0; j < board.getColumns(); j++) {
-            Piece p = board.piece(i, j);
-            if (p == null) sb.append("-");
-            else sb.append(p.toString()).append(p.getColor());
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < board.getRows(); i++) {
+            for (int j = 0; j < board.getColumns(); j++) {
+                Piece p = board.piece(i, j);
+                if (p == null) sb.append("-");
+                else sb.append(p.toString()).append(((ChessPiece)p).getColor());
+            }
         }
+        sb.append(currentPlayer);
+        return sb.toString();
     }
-    sb.append(currentPlayer);
-    return sb.toString();
-}
 
     private void updatePositionOccurrences() {
     String key = generateBoardStateKey();
@@ -404,6 +406,11 @@ public class ChessMatch {
     return false;
 }
 
+    private boolean isSameBishopColor(Bishop b1, Bishop b2) {
+        Position pos1 = b1.getChessPosition().toPosition();
+        Position pos2 = b2.getChessPosition().toPosition();
+        return ((pos1.getRow() + pos1.getColumn()) % 2) == ((pos2.getRow() + pos2.getColumn()) % 2);
+    }
 
     private void placeNewPiece(char column, int row, ChessPiece piece) {
         board.placePiece(piece, new ChessPosition(column, row).toPosition());
