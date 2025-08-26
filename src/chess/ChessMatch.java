@@ -63,7 +63,7 @@ public class ChessMatch {
         return fiftyMoveCounter;
     }
 
-    public ChessPiece[][] getpieces() {
+    public ChessPiece[][] getPieces() {
         ChessPiece[][] mat = new ChessPiece[board.getRows()][board.getColumns()];
         for (int i=0; i<board.getRows(); i++){
             for (int j=0; j<board.getColumns(); j++){

@@ -9,7 +9,7 @@ package application;
 
         @Override
         public void start(Stage primaryStage) throws Exception {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/viewController.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ViewController/View.fxml"));
             Scene scene = new Scene(loader.load());
             primaryStage.setTitle("Xadrez JavaFX");
             primaryStage.setScene(scene);
