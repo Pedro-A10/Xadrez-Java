@@ -91,5 +91,169 @@
       <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="93.0" style="-fx-background-color: #F0D9B5;" GridPane.columnIndex="7" GridPane.rowIndex="5" />
       <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="93.0" style="-fx-background-color: #F0D9B5;" GridPane.columnIndex="7" GridPane.rowIndex="7" />
       <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="93.0" style="-fx-background-color: #F0D9B5;" />
+      <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♙" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="6">
+         <font>
+            <Font name="Chiller" size="60.0" />
+         </font>
+      </Label>
+      <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♙ " textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="6">
+         <font>
+            <Font name="Chiller" size="60.0" />
+         </font></Label>
+      <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♙" textOverrun="CLIP" GridPane.rowIndex="6">
+         <font>
+            <Font name="Chiller" size="60.0" />
+         </font>
+      </Label>
+      <Label contentDisplay="CENTER" text=" ♙" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="6">
+         <font>
+            <Font name="Chiller" size="60.0" />
+         </font>
+      </Label>
+       <Label contentDisplay="CENTER" text=" ♙" textOverrun="CLIP" GridPane.columnIndex="4" GridPane.rowIndex="6">
+           <font>
+               <Font name="Chiller" size="60.0" />
+           </font>
+       </Label>
+       <Label contentDisplay="CENTER" text=" ♙" textOverrun="CLIP" GridPane.columnIndex="5" GridPane.rowIndex="6">
+           <font>
+               <Font name="Chiller" size="60.0" />
+           </font>
+       </Label>
+       <Label contentDisplay="CENTER" text=" ♙" textOverrun="CLIP" GridPane.columnIndex="6" GridPane.rowIndex="6">
+           <font>
+               <Font name="Chiller" size="60.0" />
+           </font>
+       </Label>
+       <Label contentDisplay="CENTER" text=" ♙" textOverrun="CLIP" GridPane.columnIndex="7" GridPane.rowIndex="6">
+           <font>
+               <Font name="Chiller" size="60.0" />
+           </font>
+       </Label>
+       <Label contentDisplay="CENTER" text=" ♙" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="6">
+           <font>
+               <Font name="Chiller" size="60.0" />
+           </font>
+       </Label>
+      <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♟" textOverrun="CLIP" GridPane.rowIndex="1">
+         <font>
+            <Font name="Chiller" size="60.0" />
+         </font>
+      </Label>
+       <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♟" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="1">
+           <font>
+               <Font name="Chiller" size="60.0" />
+           </font>
+       </Label>
+       <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♟" textOverrun="CLIP" GridPane.columnIndex="7" GridPane.rowIndex="1">
+           <font>
+               <Font name="Chiller" size="60.0" />
+           </font>
+       </Label>
+       <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♟" textOverrun="CLIP" GridPane.columnIndex="6" GridPane.rowIndex="1">
+           <font>
+               <Font name="Chiller" size="60.0" />
+           </font>
+       </Label>
+       <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♟" textOverrun="CLIP" GridPane.columnIndex="5" GridPane.rowIndex="1">
+           <font>
+               <Font name="Chiller" size="60.0" />
+           </font>
+       </Label>
+       <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♟" textOverrun="CLIP" GridPane.columnIndex="4" GridPane.rowIndex="1">
+           <font>
+               <Font name="Chiller" size="60.0" />
+           </font>
+       </Label>
+       <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♟" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="1">
+           <font>
+               <Font name="Chiller" size="60.0" />
+           </font>
+       </Label>
+       <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♟" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="1">
+           <font>
+               <Font name="Chiller" size="60.0" />
+           </font>
+       </Label>
+      <Label contentDisplay="CENTER" text=" ♖" GridPane.rowIndex="7">
+         <font>
+            <Font name="Chiller" size="60.0" />
+         </font>
+      </Label>
+       <Label contentDisplay="CENTER" text=" ♖" GridPane.columnIndex="7" GridPane.rowIndex="7">
+           <font>
+               <Font name="Chiller" size="60.0" />
+           </font>
+       </Label>
+      <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♘" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="7">
+         <font>
+            <Font name="Chiller" size="60.0" />
+         </font>
+      </Label>
+       <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♘" textOverrun="CLIP" GridPane.columnIndex="6" GridPane.rowIndex="7">
+           <font>
+               <Font name="Chiller" size="60.0" />
+           </font>
+       </Label>
+      <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♗" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="7">
+         <font>
+            <Font name="Chiller" size="60.0" />
+         </font>
+      </Label>
+       <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♗" textOverrun="CLIP" GridPane.columnIndex="5" GridPane.rowIndex="7">
+           <font>
+               <Font name="Chiller" size="60.0" />
+           </font>
+       </Label>
+      <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♕" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="7">
+         <font>
+            <Font name="Chiller" size="60.0" />
+         </font>
+      </Label>
+      <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♔" textOverrun="CLIP" GridPane.columnIndex="4" GridPane.rowIndex="7">
+         <font>
+            <Font name="Chiller" size="60.0" />
+         </font>
+      </Label>
+      <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♜" textOverrun="CLIP">
+         <font>
+            <Font name="Chiller" size="60.0" />
+         </font>
+      </Label>
+       <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♜" textOverrun="CLIP" GridPane.columnIndex="7">
+           <font>
+               <Font name="Chiller" size="60.0" />
+           </font>
+       </Label>
+      <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♞" textOverrun="CLIP" GridPane.columnIndex="1">
+         <font>
+            <Font name="Chiller" size="60.0" />
+         </font>
+      </Label>
+       <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♞" textOverrun="CLIP" GridPane.columnIndex="6">
+           <font>
+               <Font name="Chiller" size="60.0" />
+           </font>
+       </Label>
+      <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♝" textOverrun="CLIP" GridPane.columnIndex="2">
+         <font>
+            <Font size="60.0" />
+         </font>
+      </Label>
+       <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♝" textOverrun="CLIP" GridPane.columnIndex="5">
+           <font>
+               <Font size="60.0" />
+           </font>
+       </Label>
+      <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♛" textOverrun="CLIP" GridPane.columnIndex="3">
+         <font>
+            <Font name="Chiller" size="60.0" />
+         </font>
+      </Label>
+      <Label contentDisplay="CENTER" graphicTextGap="5.0" text=" ♚" textOverrun="CLIP" GridPane.columnIndex="4">
+         <font>
+            <Font name="Chiller" size="60.0" />
+         </font>
+      </Label>
    </children>
 </GridPane>
